@@ -45,7 +45,7 @@ public class Admin {
         File[] files = new File(dataDir).listFiles();
         for (File file : files) {
             String fname = file.getName();
-            if (file.isFile() && fname.startsWith(name)) {
+            if (file.isFile() && fname.substring(0, name.lastIndexOf('.')).equals(name)) {
                 file.delete();
                 return;
             }

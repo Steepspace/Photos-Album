@@ -57,6 +57,10 @@ public class Album implements Serializable{
                 if(latest.compareTo(photo) < 0) latest = photo;
             }
         }
+        else{
+            earliest = null;
+            latest = null;
+        }
     }
 
     /**
@@ -165,7 +169,7 @@ public class Album implements Serializable{
     public void removePhoto(String path){
         Photo photo = new Photo(path);
         this.photos.remove(photo);
-        if(earliest.equals(photo) || latest.equals(photo)) resetRange();
+        if((earliest != null) && (earliest.equals(photo) || latest.equals(photo))) resetRange();
     }
 
     /**
