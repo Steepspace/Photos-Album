@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionModel;
-import javafx.scene.text.Text;
 
 import javafx.event.ActionEvent;
 

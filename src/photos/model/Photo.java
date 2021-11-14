@@ -152,7 +152,7 @@ public class Photo implements Comparable<Photo>, Serializable {
      * @return String containing the date of the photo in mm/dd/yyyy format
      */
     public String toString(){
-        // return cal.get(Calendar.MONTH) + 1 + "/" + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.YEAR);
-        return path;
+        return cal.get(Calendar.MONTH) + 1 + "/" + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.YEAR);
+        // return path;
     }
 }

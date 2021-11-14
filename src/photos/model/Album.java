@@ -192,7 +192,7 @@ public class Album implements Serializable{
      * @return String containing the name, size, earliest date, and latest date of the album
      */
     public String toString(){
-        if(photos.isEmpty()) return "Name: " + name + " Size: " + photos.size();
+        if(photos.isEmpty()) return "Name: " + name + ", Size: " + photos.size();
 
         return "Name: " + name + ", Size: " + photos.size() + ", Range: " + earliest + " to " + latest;
     }

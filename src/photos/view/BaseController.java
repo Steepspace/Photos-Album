@@ -66,9 +66,21 @@ public abstract class BaseController {
 	/**
 	 * Switch to the User Scene
 	 * @param e user presses button
+	 * @param username username of the user
 	 */
-	public void switchToUser(final ActionEvent e) throws IOException {
-        switchScene(e, "/photos/view/User.fxml");
+	public void switchToUser(final ActionEvent e, final String username) throws IOException {
+		final FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/photos/view/User.fxml"));
+		final Parent root = loader.load();
+
+		final UserController controller = loader.getController();
+
+		controller.setField(username);
+
+		final Scene scene = new Scene(root);
+		final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	/**
@@ -80,10 +92,53 @@ public abstract class BaseController {
 	}
 
 	/**
+	 * Admin functions
 	 * Switch back to create user scene
 	 * @param e user presses button
 	 */
 	public void switchToCreateUser(final ActionEvent e) throws IOException {
         switchScene(e, "/photos/view/CreateUser.fxml");
+	}
+
+	/**
+	 * User functions
+	 * Switch to the create album scene
+	 * @param e user presses button
+	 * @param username username of the user
+	 */
+	public void switchToCreateAlbum(final ActionEvent e, final String username) throws IOException {
+		final FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/photos/view/CreateAlbum.fxml"));
+		final Parent root = loader.load();
+
+		final CreateAlbumController controller = loader.getController();
+
+		controller.setField(username);
+
+		final Scene scene = new Scene(root);
+		final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	/**
+	 * User functions
+	 * Switch to the rename album scene
+	 * @param e user presses button
+	 * @param username username of the user
+	 */
+	public void switchToRenameAlbum(final ActionEvent e, final String username, final String albumName) throws IOException {
+		final FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/photos/view/RenameAlbum.fxml"));
+		final Parent root = loader.load();
+
+		final RenameAlbumController controller = loader.getController();
+
+		controller.setField(username, albumName);
+
+		final Scene scene = new Scene(root);
+		final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
 	}
 }

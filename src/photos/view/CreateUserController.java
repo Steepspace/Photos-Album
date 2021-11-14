@@ -1,8 +1,3 @@
-/*
- * @author Apurva Narde
- * @author Max Geiger
- */
-
 package photos.view;
 
 import javafx.fxml.FXML;

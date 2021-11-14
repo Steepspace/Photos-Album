@@ -14,6 +14,9 @@ import java.io.FileInputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+
 /**
  * General User Class.
  * @author Apurva Narde
@@ -72,8 +75,8 @@ public class User implements Serializable {
      * Get albums
      * @return Collection of albums.
      */
-    public ArrayList<Album> getAlbums(){
-        return this.albums;
+    public ObservableList<Album> getAlbums(){
+        return FXCollections.observableArrayList(this.albums);
     }
 
     /**
