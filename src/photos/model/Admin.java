@@ -2,6 +2,8 @@ package photos.model;
 
 import java.util.ArrayList;
 import java.io.File;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 
 /**
  * Admin User Class
@@ -45,7 +47,7 @@ public class Admin {
         File[] files = new File(dataDir).listFiles();
         for (File file : files) {
             String fname = file.getName();
-            if (file.isFile() && fname.substring(0, name.lastIndexOf('.')).equals(name)) {
+            if (file.isFile() && fname.substring(0, fname.lastIndexOf('.')).equals(name)) {
                 file.delete();
                 return;
             }
@@ -56,8 +58,8 @@ public class Admin {
      * Admin List users
      * @return List of Strings which contain the username of each user
      */
-    public static ArrayList<String> getUsers(){
-        ArrayList<String> results = new ArrayList<>();
+    public static ObservableList<String> getUsers(){
+        ObservableList<String> results = FXCollections.observableArrayList(new ArrayList<>());
 
         File[] files = new File(dataDir).listFiles();
         //If this pathname does not denote a directory, then listFiles() returns null.
