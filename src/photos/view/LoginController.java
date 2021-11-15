@@ -30,7 +30,7 @@ public class LoginController extends BaseController{
 		final String uname = username.getText().strip();
 
 		if(uname.equals("admin")) switchToAdmin(e);
-		else if(Admin.getUsers().contains(uname)) System.out.println("Login User: " + uname);
+		else if(Admin.getUsers().contains(uname)) switchToUser(e, uname);
 		else getAlert("Error", "User does NOT exist", "Please enter a valid username.");
 	}
 }
