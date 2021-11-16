@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.CopyPhotoController">
+   <children>
+      <Text layoutX="237.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copy Photo" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="220.32421875" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Button fx:id="cancelB" layoutX="340.0" layoutY="183.0" mnemonicParsing="false" onAction="#switchToAlbum" prefHeight="39.0" prefWidth="125.0" text="Cancel">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="quitB" layoutX="340.0" layoutY="238.0" mnemonicParsing="false" onAction="#quit" prefHeight="39.0" prefWidth="125.0" text="Quit">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="copyB" layoutX="340.0" layoutY="124.0" mnemonicParsing="false" onAction="#copyPhoto" prefHeight="39.0" prefWidth="125.0" text="Copy">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ListView fx:id="photolist" layoutX="14.0" layoutY="59.0" prefHeight="327.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
