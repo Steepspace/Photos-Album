@@ -6,29 +6,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.EditCaptionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.EditCaptionController">
    <children>
       <Text layoutX="224.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Caption" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="223.10693359375" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
-      <Button fx:id="cancelB" layoutX="335.0" layoutY="165.0" mnemonicParsing="false" onAction="#switchToAlbum" prefHeight="39.0" prefWidth="95.0" text="Cancel">
+      <Button layoutX="335.0" layoutY="165.0" mnemonicParsing="false" onAction="#switchToAlbum" prefHeight="39.0" prefWidth="95.0" text="Cancel">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="quitB" layoutX="187.0" layoutY="165.0" mnemonicParsing="false" onAction="#quit" prefHeight="39.0" prefWidth="95.0" text="Quit" AnchorPane.rightAnchor="318.0" AnchorPane.topAnchor="165.0">
+      <Button layoutX="187.0" layoutY="165.0" mnemonicParsing="false" onAction="#quit" prefHeight="39.0" prefWidth="95.0" text="Quit" AnchorPane.rightAnchor="318.0" AnchorPane.topAnchor="165.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TextField fx:id="caption" layoutX="40.0" layoutY="76.0" onAction="#editCaption" prefHeight="71.0" prefWidth="268.0" promptText="new caption">
+      <TextField fx:id="captionText" layoutX="40.0" layoutY="76.0" prefHeight="71.0" prefWidth="268.0" promptText="new caption">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="editB" layoutX="377.0" layoutY="106.0" mnemonicParsing="false" onAction="#editCaption" prefHeight="39.0" prefWidth="95.0" text="Edit">
+      <Button layoutX="335.0" layoutY="106.0" mnemonicParsing="false" onAction="#editCaption" prefHeight="39.0" prefWidth="115.0" text="Confirm">
          <font>
             <Font size="20.0" />
          </font>

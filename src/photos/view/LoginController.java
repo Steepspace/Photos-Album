@@ -20,17 +20,17 @@ public class LoginController extends BaseController{
     /**
      * Username of the user
      */
-	@FXML TextField username;
+    @FXML TextField username;
 
-	/**
-	 * Validate the user login
-	 * @param e user presses button
-	 */
-	public void login(final ActionEvent e) throws IOException{
-		final String uname = username.getText().strip();
+    /**
+     * Validate the user login
+     * @param e user presses button
+     */
+    public void login(final ActionEvent e) throws IOException{
+        final String uname = username.getText().strip();
 
-		if(uname.equals("admin")) switchToAdmin(e);
-		else if(Admin.getUsers().contains(uname)) switchToUser(e, uname);
-		else getAlert("Error", "User does NOT exist", "Please enter a valid username.");
-	}
+        if(uname.equals("admin")) switchToAdmin(e);
+        else if(Admin.getUsers().contains(uname)) switchToUser(e, uname);
+        else getAlert("Error", "User does NOT exist", "Please enter a valid username.");
+    }
 }

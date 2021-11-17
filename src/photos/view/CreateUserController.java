@@ -18,24 +18,24 @@ public class CreateUserController extends BaseController {
     /**
      * Username of the user
      */
-	@FXML TextField username;
+    @FXML TextField username;
 
-	/**
-	 * Create the user based on the provided username
-	 * @param e user presses button
-	 */
-	public void addUser(final ActionEvent e) throws IOException{
-		final String name = username.getText().strip();
+    /**
+     * Create the user based on the provided username
+     * @param e user presses button
+     */
+    public void addUser(final ActionEvent e) throws IOException{
+        final String name = username.getText().strip();
 
-		if(name.isEmpty()){
-			getAlert("Error", "Username cannot be empty", "Please enter valid username");
-			return;
-		}
+        if(name.isEmpty()){
+            getAlert("Error", "Username cannot be empty", "Please enter valid username");
+            return;
+        }
 
-		if(!Admin.createUser(name)){
-			getAlert("Error", "Username already exists", "Please enter valid username");
-			return;
-		}
-		switchToAdmin(e);
-	}
+        if(!Admin.createUser(name)){
+            getAlert("Error", "Username already exists", "Please enter valid username");
+            return;
+        }
+        switchToAdmin(e);
+    }
 }
