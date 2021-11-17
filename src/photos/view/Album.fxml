@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.AlbumController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.AlbumController">
    <children>
-      <Text layoutX="360.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Album" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="359.88525390625" AnchorPane.topAnchor="14.0">
+      <Text fx:id="albumText" layoutX="360.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Album" wrappingWidth="213.11474609375" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="227.0" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="25.0" />
          </font>
@@ -19,57 +19,52 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <ListView fx:id="imagelist" layoutX="14.0" layoutY="57.0" prefHeight="338.0" prefWidth="200.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="57.0" />
-      <Button fx:id="addphotoB" layoutX="228.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchToAddPhoto" prefHeight="39.0" prefWidth="200.0" text="Add Photo" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="141.0">
+      <Button layoutX="228.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchToAddPhoto" prefHeight="39.0" prefWidth="200.0" text="Add Photo" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="141.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="deletePhotoB" layoutX="228.0" layoutY="194.0" mnemonicParsing="false" onAction="#deletePhoto" prefHeight="39.0" prefWidth="200.0" text="DeletePhoto" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="194.0">
+      <Button layoutX="228.0" layoutY="194.0" mnemonicParsing="false" onAction="#deletePhoto" prefHeight="39.0" prefWidth="200.0" text="Delete Photo" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="194.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="closeB" layoutX="228.0" layoutY="455.0" mnemonicParsing="false" onAction="#switchToUser" prefHeight="39.0" prefWidth="95.0" text="Close" AnchorPane.rightAnchor="477.0" AnchorPane.topAnchor="455.0">
+      <Button layoutX="228.0" layoutY="455.0" mnemonicParsing="false" onAction="#switchToUser" prefHeight="39.0" prefWidth="95.0" text="Close" AnchorPane.rightAnchor="477.0" AnchorPane.topAnchor="455.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="quitB" layoutX="333.0" layoutY="455.0" mnemonicParsing="false" onAction="#quit" prefHeight="39.0" prefWidth="95.0" text="Quit" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="455.0">
+      <Button layoutX="333.0" layoutY="455.0" mnemonicParsing="false" onAction="#quit" prefHeight="39.0" prefWidth="95.0" text="Quit" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="455.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="editCapB" layoutX="228.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToEditCap" prefHeight="39.0" prefWidth="200.0" text="Edit Caption">
+      <Button layoutX="228.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToEditCaption" prefHeight="39.0" prefWidth="200.0" text="Edit Caption">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="copyphotoB" layoutX="228.0" layoutY="298.0" mnemonicParsing="false" onAction="#switchToCopyPhoto" prefHeight="39.0" prefWidth="200.0" text="Copy Photo">
+      <Button layoutX="228.0" layoutY="298.0" mnemonicParsing="false" onAction="#switchToCopyPhoto" prefHeight="39.0" prefWidth="200.0" text="Copy Photo">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="movephotoB" layoutX="228.0" layoutY="351.0" mnemonicParsing="false" onAction="#switchToMovePhoto" prefHeight="39.0" prefWidth="200.0" text="Move Photo">
+      <Button layoutX="228.0" layoutY="351.0" mnemonicParsing="false" onAction="#switchToMovePhoto" prefHeight="39.0" prefWidth="200.0" text="Move Photo">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="slideshowB" layoutX="228.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToSlideShow" prefHeight="39.0" prefWidth="200.0" text="Slide Show">
+      <Button layoutX="228.0" layoutY="405.0" mnemonicParsing="false" onAction="#switchToSlideShow" prefHeight="39.0" prefWidth="200.0" text="Slide Show">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="searchB" layoutX="14.0" layoutY="397.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="39.0" prefWidth="200.0" text="Search" AnchorPane.bottomAnchor="14.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <ImageView fx:id="imageView" fitHeight="250.0" fitWidth="343.0" layoutX="440.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" />
-      <ListView fx:id="taglist" layoutX="443.0" layoutY="310.0" prefHeight="233.0" prefWidth="191.0" AnchorPane.bottomAnchor="14.0" />
-      <Text fx:id="caption" layoutX="443.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="caption" wrappingWidth="343.0" AnchorPane.rightAnchor="14.0" />
-      <Text fx:id="date" layoutX="443.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date" wrappingWidth="343.0" AnchorPane.rightAnchor="14.0" />
-      <Button fx:id="addtagB" layoutX="668.0" layoutY="393.0" mnemonicParsing="false" onAction="#switchToAddTag" prefHeight="24.0" prefWidth="90.0" text="Add Tag" />
-      <Button fx:id="deletetagB" layoutX="668.0" layoutY="432.0" mnemonicParsing="false" onAction="#deleteTag" text="Delete Tag" />
+      <ImageView fx:id="displayImage" fitHeight="250.0" fitWidth="343.0" layoutX="440.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" />
+      <ListView fx:id="tagList" layoutX="443.0" layoutY="310.0" prefHeight="233.0" prefWidth="191.0" AnchorPane.bottomAnchor="14.0" />
+      <Text fx:id="captionText" layoutX="443.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caption:" wrappingWidth="343.0" AnchorPane.rightAnchor="14.0" />
+      <Text fx:id="dateText" layoutX="443.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date" wrappingWidth="343.0" AnchorPane.rightAnchor="14.0" />
+      <Button layoutX="668.0" layoutY="393.0" mnemonicParsing="false" onAction="#switchToAddTag" prefHeight="24.0" prefWidth="90.0" text="Add Tag" />
+      <Button layoutX="668.0" layoutY="432.0" mnemonicParsing="false" onAction="#deleteTag" text="Delete Tag" />
+      <ListView fx:id="imageList" layoutX="14.0" layoutY="61.0" prefHeight="524.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

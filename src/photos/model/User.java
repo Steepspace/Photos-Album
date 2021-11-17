@@ -1,7 +1,6 @@
 package photos.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Calendar;
 import java.util.stream.Collectors;
 import java.util.function.Predicate;
@@ -204,8 +203,8 @@ public class User implements Serializable {
      * @return null if no results found and collection of photos if there are valid matches
      * @throws ParseException if the dates are in incorrect format
      */
-    public ArrayList<Photo> search(String begin, String end) throws ParseException{
-        HashSet<Photo> photos = new HashSet<>();
+    public ObservableList<Photo> search(String begin, String end) throws ParseException{
+        ArrayList<Photo> photos = new ArrayList<>();
         Calendar earliest = Calendar.getInstance();
         Calendar latest = Calendar.getInstance();
         earliest.setTime((new SimpleDateFormat("MM/dd/yyyy")).parse(begin));
@@ -214,16 +213,27 @@ public class User implements Serializable {
         for(Album album : albums){
             // get all photos of the album if the search range is within album range
             if(earliest.compareTo(album.getEarliest()) <= 0 && latest.compareTo(album.getLatest()) >= 0){
-                photos.addAll(album.getPhotos());
+                for (Photo photo : album.getPhotos()) {
+                    if (!photos.contains(photo)) photos.add(photo);
+                }
             }
             else if(earliest.compareTo(album.getEarliest()) <= 0 && latest.compareTo(album.getEarliest()) >= 0){
-                photos.addAll(album.getPhotos().stream().filter(photo -> latest.compareTo(photo.getCal()) >= 0).collect(Collectors.toList()));
+                Predicate<Photo> pred = p -> latest.compareTo(p.getCal()) >= 0;
+
+                for (Photo photo : album.getPhotos()) {
+                    if (pred.test(photo) && !photos.contains(photo)) photos.add(photo);
+                }
             }
             else if(latest.compareTo(album.getLatest()) >= 0 && earliest.compareTo(album.getLatest()) <= 0){
-                photos.addAll(album.getPhotos().stream().filter(photo -> earliest.compareTo(photo.getCal()) <= 0).collect(Collectors.toList()));
+
+                Predicate<Photo> pred = p -> earliest.compareTo(p.getCal()) <= 0;
+
+                for (Photo photo : album.getPhotos()) {
+                    if (pred.test(photo) && !photos.contains(photo)) photos.add(photo);
+                }
             }
         }
-        return new ArrayList<Photo>(photos);
+        return FXCollections.observableArrayList(photos);
     }
 
     /**
@@ -231,8 +241,8 @@ public class User implements Serializable {
      * @param byTag query
      * @return null if no results found and collection of photos if there are valid matches
      */
-    public ArrayList<Photo> search(String byTag){
-        HashSet<Photo> photos = new HashSet<>();
+    public ObservableList<Photo> search(String byTag){
+        ArrayList<Photo> photos = new ArrayList<>();
 
         Predicate<Photo> pred;
         if (byTag.split("AND").length == 2){
@@ -262,9 +272,11 @@ public class User implements Serializable {
         }
 
         for(Album album : albums){
-            photos.addAll(album.getPhotos().stream().filter(pred).collect(Collectors.toList()));
+            for(Photo photo : album.getPhotos()){
+                if(pred.test(photo) && !photos.contains(photo)) photos.add(photo);
+            }
         }
-        return new ArrayList<Photo>(photos);
+        return FXCollections.observableArrayList(photos);
     }
 
     /**

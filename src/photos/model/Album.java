@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.io.Serializable;
 
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+
 /**
  * Album Class handles the storage of a collection of photos.
  * @author Apurva Narde
@@ -138,8 +141,8 @@ public class Album implements Serializable{
      * Get the collection of photos
      * @return ArrayList of photos in the album.
      */
-    public ArrayList<Photo> getPhotos() {
-        return photos;
+    public ObservableList<Photo> getPhotos() {
+        return FXCollections.observableArrayList(photos);
     }
 
     /**
@@ -185,6 +188,14 @@ public class Album implements Serializable{
         final Album other = (Album)obj;
 
         return this.name.equals(other.getName());
+    }
+
+    /**
+     * Check if album is empty
+     * @return true if album is empty and false otherwise
+     */
+    public boolean isEmpty(){
+        return photos.isEmpty();
     }
 
     /**

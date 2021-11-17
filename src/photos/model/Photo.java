@@ -3,8 +3,12 @@ package photos.model;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.io.File;
 import java.io.Serializable;
+
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 
 /**
  * Photo class to handle the storage and management of the basic building blocks.
@@ -53,7 +57,7 @@ public class Photo implements Comparable<Photo>, Serializable {
      * @param path Absolute path of the image in the system.
      */
     public Photo(String path) {
-        this(path, Calendar.getInstance(), new HashMap<>(), null);
+        this(path, Calendar.getInstance(), new HashMap<>(), "");
         try {
             cal.setTimeInMillis((new File(path)).lastModified());
             cal.set(Calendar.MILLISECOND, 0);
@@ -100,11 +104,30 @@ public class Photo implements Comparable<Photo>, Serializable {
     }
 
     /**
-     * Get list of tags associated with the image.
+     * Get hashmap of tags associated with the image.
      * @return tags key value pair of String which can be associated with multiple tags.
      */
     public HashMap<String,LinkedList<String>> getTags() {
         return tags;
+    }
+
+    /**
+     * Get list of tags associated with the image.
+     * @return tags key value pair of String which can be associated with multiple tags.
+     */
+    public ObservableList<List<String>> getTagList() {
+        ObservableList<List<String>> rtags = FXCollections.observableArrayList(new LinkedList<List<String>>());
+
+        for(String key : tags.keySet()){
+            for(String val : tags.get(key)){
+                List<String> tag = new LinkedList<>();
+                tag.add(key);
+                tag.add(val);
+                rtags.add(tag);
+            }
+        }
+
+        return rtags;
     }
 
     /**

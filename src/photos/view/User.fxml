@@ -6,16 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.UserController">
    <children>
-      <Label fx:id="userText" layoutX="192.0" layoutY="26.0" prefHeight="71.0" prefWidth="243.0">
+      <Label fx:id="userText" layoutX="305.0" layoutY="26.0" prefHeight="71.0" prefWidth="243.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ListView fx:id="listView" layoutX="56.0" layoutY="160.0" prefHeight="220.0" prefWidth="200.0" />
-      <Label layoutX="118.0" layoutY="124.0" prefHeight="29.0" prefWidth="82.0" text="Albums">
+      <ListView fx:id="albumList" layoutX="56.0" layoutY="58.0" prefHeight="258.0" prefWidth="200.0" />
+      <Label layoutX="118.0" layoutY="21.0" prefHeight="29.0" prefWidth="82.0" text="Albums">
          <font>
             <Font size="19.0" />
          </font>
@@ -50,5 +49,6 @@
             <Font size="20.0" />
          </font>
       </Button>
+      <Button layoutX="102.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToSearch" prefHeight="49.0" prefWidth="108.0" text="Search" />
    </children>
 </AnchorPane>
