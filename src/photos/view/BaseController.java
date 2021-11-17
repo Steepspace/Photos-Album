@@ -287,11 +287,10 @@ public abstract class BaseController {
     
     /**
      * Album functions
-     * Open the copy photo scene
+     * Open the Slide Show scene
      * @param e user presses button
      * @param username username of the user
-     * @param albumName name of the album in which the photo resides
-     * @param path path of the image
+     * @param albumName name of the album being displayed
      */
     public void switchToSlideShow(final ActionEvent e, final String username, final String albumName) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
