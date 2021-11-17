@@ -42,6 +42,8 @@ all: $(BINAPP)/Photos.class \
 	 $(BINVIEW)/MovePhoto.fxml \
 	 $(BINVIEW)/SearchController.class \
 	 $(BINVIEW)/Search.fxml \
+	 $(BINVIEW)/SlideShowController.class \
+	 $(BINVIEW)/SlideShow.fxml \
 
 $(BINAPP)/Photos.class: $(APP)/Photos.java
 	javac $(JFLAGS) $(APP)/Photos.java
@@ -132,6 +134,12 @@ $(BINVIEW)/SearchController.class: $(VIEW)/SearchController.java
 
 $(BINVIEW)/Search.fxml: $(VIEW)/Search.fxml
 	cp $(VIEW)/Search.fxml $(BINVIEW)
+
+$(BINVIEW)/SlideShowController.class: $(VIEW)/SlideShowController.java
+	javac $(JFLAGS) $(VIEW)/SlideShowController.java
+
+$(BINVIEW)/SlideShow.fxml: $(VIEW)/SlideShow.fxml
+	cp $(VIEW)/SlideShow.fxml $(BINVIEW)
 
 clean:
 	rm -r ../bin/*

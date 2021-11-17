@@ -238,7 +238,11 @@ public class AlbumController extends BaseController{
      * @param e user presses button
      */
     public void switchToSlideShow(final ActionEvent e) throws IOException {
-
+    	if(album.isEmpty()) {
+    		getAlert("Error", "Album empty","Please add a photo to this album, then try again.");
+    		return;
+    	}
+    	switchToSlideShow(e, user.getName(),album.getName());
     }
 
     /**

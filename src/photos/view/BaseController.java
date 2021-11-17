@@ -284,4 +284,26 @@ public abstract class BaseController {
         stage.setScene(scene);
         stage.show();
     }
+    
+    /**
+     * Album functions
+     * Open the Slide Show scene
+     * @param e user presses button
+     * @param username username of the user
+     * @param albumName name of the album being displayed
+     */
+    public void switchToSlideShow(final ActionEvent e, final String username, final String albumName) throws IOException {
+        final FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/photos/view/SlideShow.fxml"));
+        final Parent root = loader.load();
+
+        final SlideShowController controller = loader.getController();
+
+        controller.setField(username, albumName);
+
+        final Scene scene = new Scene(root);
+        final Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
