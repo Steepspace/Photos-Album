@@ -27,6 +27,7 @@ public abstract class BaseController {
 
     /**
      * Quit the Application
+     * @param e user presses button
      */
     public void quit(final ActionEvent e){
         System.exit(0);
@@ -51,6 +52,7 @@ public abstract class BaseController {
      * Switch to the given scene
      * @param e user presses button
      * @param fxml String path to the fxml file
+     * @throws IOException when path to file is incorrect
      */
     private void switchScene(final ActionEvent e, final String fxml) throws IOException {
         final Parent root = FXMLLoader.load(getClass().getResource(fxml));
@@ -63,6 +65,7 @@ public abstract class BaseController {
     /**
      * Switch to the Admin Scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAdmin(final ActionEvent e) throws IOException {
         switchScene(e, "/photos/view/Admin.fxml");
@@ -72,6 +75,7 @@ public abstract class BaseController {
      * Switch to the User Scene
      * @param e user presses button
      * @param username username of the user
+     * @throws IOException when path to file is incorrect
      */
     public void switchToUser(final ActionEvent e, final String username) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -90,6 +94,7 @@ public abstract class BaseController {
     /**
      * Switch back to the login scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToLogin(final ActionEvent e) throws IOException {
         switchScene(e, "/photos/view/Login.fxml");
@@ -99,6 +104,7 @@ public abstract class BaseController {
      * Admin functions
      * Switch back to create user scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToCreateUser(final ActionEvent e) throws IOException {
         switchScene(e, "/photos/view/CreateUser.fxml");
@@ -110,6 +116,7 @@ public abstract class BaseController {
      * @param e user presses button
      * @param username username of the user
      * @param photos photos to add for the album (null when not being called from SearchController.java)
+     * @throws IOException when path to file is incorrect
      */
     public void switchToCreateAlbum(final ActionEvent e, final String username, List<Photo> photos) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -132,6 +139,7 @@ public abstract class BaseController {
      * @param e user presses button
      * @param username username of the user
      * @param albumName name of the album to rename
+     * @throws IOException when path to file is incorrect
      */
     public void switchToRenameAlbum(final ActionEvent e, final String username, final String albumName) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -155,6 +163,7 @@ public abstract class BaseController {
      * @param username username of the user
      * @param albumName name of the album to open
      * @param photo photo to select once switching to the album
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAlbum(final ActionEvent e, final String username, final String albumName, final Photo photo) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -178,6 +187,7 @@ public abstract class BaseController {
      * @param username username of the user
      * @param albumName name of the album in which the photo resides
      * @param path path of the image
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAddTag(final ActionEvent e, final String username, final String albumName, final String path) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -202,6 +212,7 @@ public abstract class BaseController {
      * @param albumName name of the album in which the photo resides
      * @param path path of the image
      * @param caption old caption of the image
+     * @throws IOException when path to file is incorrect
      */
     public void switchToEditCaption(final ActionEvent e, final String username, final String albumName, final String path, final String caption) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -225,6 +236,7 @@ public abstract class BaseController {
      * @param username username of the user
      * @param albumName name of the album in which the photo resides
      * @param path path of the image
+     * @throws IOException when path to file is incorrect
      */
     public void switchToCopyPhoto(final ActionEvent e, final String username, final String albumName, final String path) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -248,6 +260,7 @@ public abstract class BaseController {
      * @param username username of the user
      * @param albumName name of the album in which the photo resides
      * @param path path of the image
+     * @throws IOException when path to file is incorrect
      */
     public void switchToMovePhoto(final ActionEvent e, final String username, final String albumName, final String path) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -269,6 +282,7 @@ public abstract class BaseController {
      * Open the Search scene
      * @param e user presses button
      * @param username username of the user
+     * @throws IOException when path to file is incorrect
      */
     public void switchToSearch(final ActionEvent e, final String username) throws IOException {
         final FXMLLoader loader = new FXMLLoader();
@@ -291,6 +305,7 @@ public abstract class BaseController {
      * @param e user presses button
      * @param username username of the user
      * @param albumName name of the album being displayed
+     * @throws IOException when path to file is incorrect
      */
     public void switchToSlideShow(final ActionEvent e, final String username, final String albumName) throws IOException {
         final FXMLLoader loader = new FXMLLoader();

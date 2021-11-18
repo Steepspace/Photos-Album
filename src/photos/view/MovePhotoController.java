@@ -71,6 +71,7 @@ public class MovePhotoController extends BaseController{
     /**
      * Switch back to the album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAlbum(final ActionEvent e) throws IOException {
         switchToAlbum(e, user.getName(), album.getName(), new Photo(path));
@@ -79,6 +80,7 @@ public class MovePhotoController extends BaseController{
     /**
      * Move the photo to the selected album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void movePhoto(final ActionEvent e) throws IOException{
         if(!user.movePhoto(album.getName(), model.getSelectedItem().getName(), path)){

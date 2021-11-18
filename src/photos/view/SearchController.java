@@ -68,6 +68,7 @@ public class SearchController extends BaseController{
     /**
      * populates images in the albums from the search results
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void search(final ActionEvent e) throws IOException {
 
@@ -119,6 +120,7 @@ public class SearchController extends BaseController{
     /**
      * Switch to create album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToCreateAlbum(final ActionEvent e) throws IOException {
         if(results != null && !results.isEmpty()) switchToCreateAlbum(e, user.getName(), results);
@@ -127,6 +129,7 @@ public class SearchController extends BaseController{
     /**
      * Go back to the user scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToUser(final ActionEvent e) throws IOException {
         switchToUser(e, user.getName());

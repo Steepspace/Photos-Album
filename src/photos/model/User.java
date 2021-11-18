@@ -320,6 +320,8 @@ public class User implements Serializable {
      * Unserialize the User instance from a .dat file.
      * @param name username of User
      * @return User instance of the corresponding username
+     * @throws IOException when path to file is incorrect
+     * @throws ClassNotFoundException when the class being cast is not the original class
      */
     public static User readUser(String name) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("../data/" + name + ".dat"));

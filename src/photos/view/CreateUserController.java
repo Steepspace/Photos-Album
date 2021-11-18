@@ -23,6 +23,7 @@ public class CreateUserController extends BaseController {
     /**
      * Create the user based on the provided username
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void addUser(final ActionEvent e) throws IOException{
         final String name = username.getText().strip();

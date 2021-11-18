@@ -201,6 +201,7 @@ public class AlbumController extends BaseController{
     /**
      * Go back to the user scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToUser(final ActionEvent e) throws IOException {
         switchToUser(e, user.getName());
@@ -209,6 +210,7 @@ public class AlbumController extends BaseController{
     /**
      * Switch to edit caption scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToEditCaption(final ActionEvent e) throws IOException {
         Photo photo = modelImage.getSelectedItem();
@@ -218,6 +220,7 @@ public class AlbumController extends BaseController{
     /**
      * Switch to copy photo scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToCopyPhoto(final ActionEvent e) throws IOException {
         Photo photo = modelImage.getSelectedItem();
@@ -227,6 +230,7 @@ public class AlbumController extends BaseController{
     /**
      * Switch to move photo scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToMovePhoto(final ActionEvent e) throws IOException {
         Photo photo = modelImage.getSelectedItem();
@@ -236,6 +240,7 @@ public class AlbumController extends BaseController{
     /**
      * Switch to slide show scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToSlideShow(final ActionEvent e) throws IOException {
     	if(album.isEmpty()) {
@@ -248,6 +253,7 @@ public class AlbumController extends BaseController{
     /**
      * Switch to add tag scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAddTag(final ActionEvent e) throws IOException{
         Photo photo = modelImage.getSelectedItem();

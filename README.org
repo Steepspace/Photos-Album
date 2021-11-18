@@ -1,0 +1,24 @@
+#+TITLE: Readme
+
+* Configure Environment Variable
+Add an environment variable pointing to the lib directory within javafx-sdk-17:
+#+begin_src sh
+export PATH_TO_FX=path/to/javafx-sdk-17/lib
+#+end_src
+
+* Compilation
+#+begin_src sh
+cd src
+make
+#+end_src
+
+* Starting Application
+#+begin_src sh
+cd bin
+java --module-path $PATH_TO_FX --add-modules=javafx.controls,javafx.fxml photos.app.Photos
+#+end_src
+
+* Generate Javadoc
+#+begin_src sh
+javadoc -d docs/ src/**.java -author -classpath $PATH_TO_FX/javafx.controls.jar:$PATH_TO_FX/javafx.fxml.jar:$PATH_TO_FX/javafx.graphics.jar:$PATH_TO_FX/javafx.base.jar
+#+end_src

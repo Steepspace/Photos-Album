@@ -46,6 +46,7 @@ public class RenameAlbumController extends BaseController {
     /**
      * Switch back to the user scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToUser(final ActionEvent e) throws IOException {
         switchToUser(e, user.getName());
@@ -54,6 +55,7 @@ public class RenameAlbumController extends BaseController {
     /**
      * Rename the album based on the provided album name
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void renameAlbum(final ActionEvent e) throws IOException{
         final String name = albumName.getText().strip();

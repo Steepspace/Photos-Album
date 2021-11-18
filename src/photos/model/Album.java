@@ -43,8 +43,6 @@ public class Album implements Serializable{
     public Album(String name, ArrayList<Photo> photos) {
         this.name = name;
         this.photos = photos;
-        earliest = null;
-        latest = null;
         resetRange();
     }
 

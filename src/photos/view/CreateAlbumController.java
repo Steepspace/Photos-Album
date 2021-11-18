@@ -49,6 +49,7 @@ public class CreateAlbumController extends BaseController {
     /**
      * Switch back to the user scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToUser(final ActionEvent e) throws IOException {
         switchToUser(e, user.getName());
@@ -57,6 +58,7 @@ public class CreateAlbumController extends BaseController {
     /**
      * Create the album based on the provided album name
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void addAlbum(final ActionEvent e) throws IOException{
         final String name = albumName.getText().strip();
@@ -66,10 +68,15 @@ public class CreateAlbumController extends BaseController {
             return;
         }
 
-        if((photos != null && !user.addAlbum(name, photos)) || (photos == null && !user.addAlbum(name))) {
+        if(!user.addAlbum(name)) {
             getAlert("Error", "Album already exists", "Please enter valid album name");
             return;
         }
+
+        if(photos != null){
+            for(Photo photo : photos) user.addPhoto(name, photo.getPath());
+        }
+
         user.writeUser();
         switchToUser(e, user.getName());
     }

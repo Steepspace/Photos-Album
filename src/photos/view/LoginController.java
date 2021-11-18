@@ -25,6 +25,7 @@ public class LoginController extends BaseController{
     /**
      * Validate the user login
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void login(final ActionEvent e) throws IOException{
         final String uname = username.getText().strip();
