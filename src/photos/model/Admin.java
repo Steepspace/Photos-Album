@@ -66,7 +66,7 @@ public class Admin {
 
         for (File file : files) {
             String name = file.getName();
-            if (file.isFile()) results.add(name.substring(0, name.lastIndexOf('.')));
+            if (file.isFile() && name.endsWith("dat")) results.add(name.substring(0, name.lastIndexOf('.')));
         }
         return results;
     }
