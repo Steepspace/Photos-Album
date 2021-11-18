@@ -79,6 +79,7 @@ public class UserController extends BaseController{
     /**
      * Switch to the selected album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAlbum(final ActionEvent e) throws IOException {
         final Album album = model.getSelectedItem();
@@ -90,6 +91,7 @@ public class UserController extends BaseController{
     /**
      * Switch to create album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToCreateAlbum(final ActionEvent e) throws IOException {
         switchToCreateAlbum(e, user.getName(), null);
@@ -98,6 +100,7 @@ public class UserController extends BaseController{
     /**
      * Rename the selected album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToRenameAlbum(final ActionEvent e) throws IOException {
         final Album album = model.getSelectedItem();
@@ -108,6 +111,7 @@ public class UserController extends BaseController{
     /**
      * Switch to search scene
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToSearch(final ActionEvent e) throws IOException {
         switchToSearch(e, user.getName());

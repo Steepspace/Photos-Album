@@ -53,6 +53,7 @@ public class AddTagController extends BaseController {
     /**
      * Switch back to the album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAlbum(final ActionEvent e) throws IOException {
         switchToAlbum(e, user.getName(), albumName, new Photo(path));
@@ -61,6 +62,7 @@ public class AddTagController extends BaseController {
     /**
      * Create the album based on the provided album name
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void addTag(final ActionEvent e) throws IOException{
         final String name = tagName.getText().strip();

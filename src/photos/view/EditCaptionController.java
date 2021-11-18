@@ -56,6 +56,7 @@ public class EditCaptionController extends BaseController {
     /**
      * Switch back to the album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAlbum(final ActionEvent e) throws IOException {
         switchToAlbum(e, user.getName(), albumName, new Photo(path));
@@ -64,6 +65,7 @@ public class EditCaptionController extends BaseController {
     /**
      * Set the caption of the photo
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void editCaption(final ActionEvent e) throws IOException{
         final String caption = captionText.getText().strip();

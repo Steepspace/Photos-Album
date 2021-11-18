@@ -36,14 +36,10 @@ public class SlideShowController extends BaseController{
 	@FXML ImageView imageview;
 	
 	/**
-	 * 
-	 * iterator of photos being displayed
-	private ListIterator<Photo> album;
-	*/
-	/**
 	 * ArrayList of photos being displayed
 	 */
 	private ObservableList<Photo> album;
+
 	/**
 	 * current index in the album
 	 */
@@ -59,9 +55,11 @@ public class SlideShowController extends BaseController{
 	 */
 	private User user;
 	
-	/**
-	 * inject data into controller and initialize
-	 */
+    /**
+     * Set the fields of the user state upon entry
+     * @param username name of the user
+     * @param albumname name of the album
+     */
 	public void setField(String username,String albumname){
 		try {
 			this.user = User.readUser(username);
@@ -111,6 +109,7 @@ public class SlideShowController extends BaseController{
 	/**
 	 * Switch to the selected album
 	 * @param e user presses button
+     * @throws IOException when path to file is incorrect
 	 */
 	public void switchToAlbum(final ActionEvent e) throws IOException {
 		switchToAlbum(e, user.getName(), a.getName(), null);

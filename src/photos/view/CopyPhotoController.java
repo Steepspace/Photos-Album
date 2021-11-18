@@ -71,6 +71,7 @@ public class CopyPhotoController extends BaseController{
     /**
      * Switch back to the album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void switchToAlbum(final ActionEvent e) throws IOException {
         switchToAlbum(e, user.getName(), album.getName(), new Photo(path));
@@ -79,6 +80,7 @@ public class CopyPhotoController extends BaseController{
     /**
      * Copy the photo to the selected album
      * @param e user presses button
+     * @throws IOException when path to file is incorrect
      */
     public void copyPhoto(final ActionEvent e) throws IOException{
         if(!user.copyPhoto(album.getName(), model.getSelectedItem().getName(), path)){
