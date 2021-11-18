@@ -4,7 +4,7 @@
 # @file
 # @version 0.1
 
-JFLAGS = --module-path $(PATH_TO_FX) --add-modules javafx.controls,javafx.fxml,javafx.graphics -d ../bin
+JFLAGS = --module-path $(PATH_TO_FX) --add-modules javafx.controls,javafx.fxml -d ../bin
 MODEL = photos/model
 BINMODEL = ../bin/$(MODEL)
 VIEW = photos/view
