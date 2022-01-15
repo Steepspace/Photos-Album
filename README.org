@@ -1,4 +1,56 @@
-#+TITLE: Readme
+#+TITLE: Photos Album GUI
+
+* Description
+** Date of photo
+The last modiﬁcation date of the photo file is taken as the date of the photo.
+
+** Tags
+Photos can be tagged with pretty much any attribute you think is useful to search on, or group by. Examples are location where photo was taken, and names of people in a photo, so you can search for photos by location and/or names. Think of a tag as a combination of tag name and tag value, e.g. ("location","New Brunswick"), or ("person","susan"). A photo may have multiple tags (name+value pairs), but no two tags for the same photo will have the same name and value combination.
+
+** Default User
+The application comes with a default user called "stock" that comes pre-loaded with 5 photos.
+
+** User
+User photos are photos that the application can allow a user to load from their computer, so they can be housed anywhere on the user's machine. The actual photos are *NOT* in the application's workspace. Instead, the application only stores the location of the photo on the user's machine.
+[[file:images-README/user.png]]
+
+** Login
+When the application starts, a user logs in with username.
+
+** Admin Subsystem
+There is a special username "admin" that will put the application in an administration sub-system. The admin user can then do any of the following:
++ List Users
++ Create a new user
++ Delete an existing user
+[[file:images-README/admin.png]]
+
+** Non-admin User Subsystem
+Once the user logs in successfully, all albums and photo information for this user from a previous session (if any) are loaded from disk. Initially, all the albums belonging to the user are displayed. For each album, its name, the number of photos in it, and the range of dates (earliest and latest date) on which photos were taken are displayed.
+[[file:images-README/album.png]]
+
+The user can then do the following:
++ Create albums
++ Delete albums
++ Rename albums
++ Open an album. Opening an album displays all photos, with their thumbnail images and captions, inside that album. Once an album is open the user can do the following:
+  - Add a photo
+  - Remove a photo
+  - Caption/recaption a photo
+  - Display a photo in a separate display area. The photo display also shows its caption, its date-time of capture, and all its tags.
+  - Add a tag to a photo
+  - Delete a tag from a photo
+  - Copy a photo from one album to another (multiple albums may have copies of the same photo)
+  - Move a photo from one album (source) to another (the photo will be removed from the source album)
+  - Go through photos in an album in sequence forward or backward, one at a time, with user interaction (manual slideshow)
+[[file:images-README/slide-show.png]]
+
++ Search for photos (Photos that match the search criteria should be displayed in a similar way to how photos in an album are displayed).
+  - Search for photos by a date range.
+  - Search for photos by tag type-value pairs. The following types of tag-based searches should be implemented:
+    + A single tag-value pair, e.g ~person=Bob~
+    + Conjunctive combination of two tag-value pairs, e.g. ~person=Bob AND location=prague~
+    + Disjunctive combination of two tag-value pairs, e.g. ~person=Bob OR location=prague~
+[[file:images-README/search.png]]
 
 * Configure Environment Variable
 Add an environment variable pointing to the lib directory within javafx-sdk-17:
@@ -22,3 +74,5 @@ java --module-path $PATH_TO_FX --add-modules=javafx.controls,javafx.fxml photos.
 #+begin_src sh
 javadoc -d docs/ src/**.java -author -classpath $PATH_TO_FX/javafx.controls.jar:$PATH_TO_FX/javafx.fxml.jar:$PATH_TO_FX/javafx.graphics.jar:$PATH_TO_FX/javafx.base.jar
 #+end_src
+
+Please follow both [[http://academicintegrity.rutgers.edu/][Rutgers University's Principles of Academic Integrity]] and the [[https://www.cs.rutgers.edu/academics/undergraduate/academic-integrity-policy][Rutgers Department of Computer Science's Academic Integrity Policy]].
