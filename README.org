@@ -16,6 +16,7 @@ User photos are photos that the application can allow a user to load from their 
 
 ** Login
 When the application starts, a user logs in with username.
+[[file:images-README/login.png]]
 
 ** Admin Subsystem
 There is a special username "admin" that will put the application in an administration sub-system. The admin user can then do any of the following:
